@@ -100,10 +100,16 @@ Treatment = Guided Support Workflow
 | `location` | Agent/ team location | Allows operational comparisons |
 | `active_flag` | Whether agent is currently active | Supports accurate workforce analysis |
 
-## 3. Field-Level Requirements
 
+## 3. KPI-to-Data Mapping
 
-
-## 4. KPI-to-Data Mapping
-
-
+| Field | Primary Data | Supporting Data | Key Fields |
+| ----- | ------------ | --------------- | ---------- |
+| Repeat Contact Rate | Support Tickets | Support Events | `ticket_id, rider_id, trip_id, opened_at, event_time, event_type` | 
+| Support Cost per 1,000 Trips | Trips, Support Events | Agents, Financial Adjustments | `trip_id, handling_minutes, agent_id, cost_per_hour, amount` |
+| First Contact Resolution Rate | Support Tickets | Support Events | `ticket_id, status, resolved_at, event_type, escalation_flag` |
+| Contact Rate per 1,000 Trips | Trips, Support Tickets | - | `trip_id, ticket_id, ride_type, trip_status` |
+| Escalation Rate | Support Events | Support Tickets | `ticket_id, event_type, escalation_flag` |
+| Average Resolution Time | Support Tickets | Support Events | `ticket_id, opened_at, resolved_at, status` |
+| Customer Satisfaction Score (CSAT) | Customer Feedback | Support Tickets | `feedback_id, ticket_id, csat_score` |
+| Refund Cost per Ticket | Financial Adjustments | Support Tickets | `ticket_id, adjustment_type, amount` |
