@@ -1,3 +1,14 @@
+## Table of Contents
+- [Required Data Sources](#2-required-data-sources)
+    - [Trips](#21-trips-data)
+    - [Support Tickets](#22-support-tickets)
+    - [Support Events](#23-support-events)
+    - [Financial Adjustments](#24-financial-adjustments)
+    - [Customer Feedback](#25-customer-feedback)
+    - [Experiment Assignments](#26-experiment-assignments)
+    - [Agents](#27-agents)
+- [KPI-to-Data Mapping](#3-kpi-to-data-mapping)
+
 # Data Requirements
 
 ## 1. Overview

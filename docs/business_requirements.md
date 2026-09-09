@@ -1,3 +1,13 @@
+## Table of Contents
+- [Business Problem](#1-business-problem)
+- [Stakeholders](#2-stakeholders)
+- [Business Questions](#3-business-questions)
+- [Clarifying Questions](#4-clarifying-questions)
+- [Decisions the Analysis Should Support](#5-decisions-the-analysis-should-support)
+- [Scope](#6-scope)
+- [Assumptions](#7-assumptions)
+
+
 # Business Requirements
 
 ## 1. Business Problem

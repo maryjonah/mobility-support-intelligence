@@ -1,3 +1,7 @@
+## Table of Contents
+- [Core Entities](#core-entities)
+- [Cardinality](#cardinality)
+
 # Data Model
 
 ## Core Entities
