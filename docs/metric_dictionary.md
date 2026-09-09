@@ -1,3 +1,5 @@
+# Metric Dictionary 
+
 | Metric | Business Purpose | Definition | Numerator | Denominator | Grain | Source |
 | ------ | ---------------- | ---------- | --------- | ----------- | ----- | ------ |
 | Repeat Contact Rate | Measure how often customers need to contact support again about the same issue | Percentage of eligible support tickets where a rider makes another support contact relating to the same trip or issue within 7 days of the initial contact. | Eligible cases with another qualifying contact within 7 days | All eligible support cases | Support case/ ticket | Support Tickets, Support Events |
