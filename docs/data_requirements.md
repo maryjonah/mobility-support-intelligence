@@ -8,6 +8,7 @@
     - [Experiment Assignments](#26-experiment-assignments)
     - [Agents](#27-agents)
 - [KPI-to-Data Mapping](#3-kpi-to-data-mapping)
+- [Synthetic Data Generation Rules](#4-synthetic-data-generation-rules)
 
 # Data Requirements
 
@@ -124,3 +125,20 @@ Treatment = Guided Support Workflow
 | Average Resolution Time | Support Tickets | Support Events | `ticket_id, opened_at, resolved_at, status` |
 | Customer Satisfaction Score (CSAT) | Customer Feedback | Support Tickets | `feedback_id, ticket_id, csat_score` |
 | Refund Cost per Ticket | Financial Adjustments | Support Tickets | `ticket_id, adjustment_type, amount` |
+
+
+## 4. Synthetic Data Generation Rules
+
+- Analysis period: January 1, 2026 to June 30, 2026
+- Approximately 120,000 trips
+- Approximately 25,000 riders
+- Ride types: AV and Traditional
+- Approximately 35% of trips are AV trips
+- Support tickets are generated from a subset of trips
+- Support outcomes depend partly on issue complexity
+- The guided support workflow launches on April 1, 2026
+- Eligible post-launch AV tickets may be assigned to Control or Treatment
+- CSAT is influenced by support outcomes rather than generated independently
+- Refund probability and amount vary by issue type and support experience
+- Agent labour cost is estimated from handling time and hourly agent cost
+- A small number of deliberate data-quality issues will be introduced
