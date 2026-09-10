@@ -28,10 +28,12 @@ The document defines the datasets and fields required to support the Mobility Su
 | `city` | City where the trip occurred | Allows performance comparison across markets |
 | `ride_type` | AV or traditional ride | Allows comparison between autonomous and traditional trips |
 | `requested_at` | Date/time the trip was requested | Supports time-based analysis |
-| `completed_at` | Date/time the trip ended | Supports trip duration and reporting-period analysis |
+| `completed_at` | Date/time the trip successfully ended | Supports trip duration and reporting-period analysis |
 | `trip_status` | Completed, cancelled, failed, etc. | Determines which trips should be included in metrics |
 | `fare_amount` | Amount charged for the trip | Supports financial analysis and refund comparisons |
 | `distance_km` | Distance travelled | Allows investigation of whether trip characteristics affect support outcomes |
+| `started_at` | Date/time the trip actually began | Helps distinguish trips that started successfully from trips cancelled before pickup |
+| `cancelled_at` | Date/time the trip was cancelled | Helps distinguish pre-start from in-trip cancellations and assess whether cancellation behavior contributes to support contacts, refunds, or other customer issues |
 
 ### 2.2. Support Tickets
 
