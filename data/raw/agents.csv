@@ -1,0 +1,121 @@
+agent_id,support_team,tenure_months,cost_per_hour,location,active_flag
+A0001,Safety,26,28.54,Accra Hub,True
+A0002,General Support,39,20.29,Remote,True
+A0003,General Support,37,18.08,Accra Hub,True
+A0004,General Support,63,21.16,Remote,True
+A0005,Payments,15,23.66,Remote,True
+A0006,General Support,9,23.93,Accra Hub,True
+A0007,Payments,31,27.23,Accra Hub,True
+A0008,General Support,72,21.3,Accra Hub,False
+A0009,Safety,21,38.79,Remote,True
+A0010,Payments,33,27.78,Remote,True
+A0011,Safety,61,35.2,Remote,True
+A0012,General Support,57,20.15,Remote,True
+A0013,General Support,14,23.3,Remote,True
+A0014,Payments,17,23.6,Remote,True
+A0015,Payments,13,23.97,Accra Hub,True
+A0016,AV Specialist,23,30.85,Accra Hub,True
+A0017,General Support,18,18.2,Accra Hub,True
+A0018,AV Specialist,9,26.06,Remote,True
+A0019,Payments,5,25.33,Accra Hub,True
+A0020,Safety,26,29.67,Remote,True
+A0021,AV Specialist,20,32.71,Accra Hub,True
+A0022,General Support,27,23.24,Accra Hub,True
+A0023,General Support,21,21.08,Remote,True
+A0024,Payments,24,22.55,Accra Hub,True
+A0025,Payments,8,23.68,Accra Hub,True
+A0026,AV Specialist,66,30.25,Accra Hub,True
+A0027,General Support,18,18.33,Accra Hub,True
+A0028,Payments,62,24.12,Accra Hub,True
+A0029,Safety,53,30.14,Accra Hub,True
+A0030,General Support,8,21.46,Remote,True
+A0031,General Support,33,23.23,Remote,True
+A0032,General Support,29,23.39,Remote,True
+A0033,General Support,36,18.59,Accra Hub,True
+A0034,General Support,23,18.57,Accra Hub,True
+A0035,Payments,46,26.36,Accra Hub,True
+A0036,Payments,67,22.04,Accra Hub,True
+A0037,General Support,23,20.98,Accra Hub,True
+A0038,General Support,44,21.96,Remote,True
+A0039,General Support,23,20.33,Remote,True
+A0040,Payments,65,24.56,Remote,True
+A0041,General Support,23,20.64,Remote,True
+A0042,General Support,30,19.78,Remote,False
+A0043,General Support,24,20.52,Accra Hub,True
+A0044,General Support,45,22.82,Accra Hub,True
+A0045,AV Specialist,68,32.52,Accra Hub,True
+A0046,General Support,10,21.59,Accra Hub,True
+A0047,General Support,24,19.82,Remote,True
+A0048,General Support,9,20.43,Accra Hub,True
+A0049,AV Specialist,40,31.33,Accra Hub,True
+A0050,AV Specialist,45,29.27,Accra Hub,True
+A0051,AV Specialist,50,26.1,Accra Hub,True
+A0052,Payments,41,25.99,Accra Hub,True
+A0053,Payments,55,22.56,Accra Hub,True
+A0054,Safety,65,39.85,Accra Hub,True
+A0055,General Support,3,19.92,Accra Hub,True
+A0056,General Support,50,18.95,Accra Hub,False
+A0057,Payments,59,25.58,Remote,True
+A0058,Payments,16,26.53,Remote,True
+A0059,Safety,7,36.62,Accra Hub,False
+A0060,AV Specialist,38,27.41,Remote,True
+A0061,Payments,38,25.24,Accra Hub,True
+A0062,General Support,4,22.15,Remote,True
+A0063,AV Specialist,25,32.33,Remote,True
+A0064,General Support,48,20.91,Remote,True
+A0065,AV Specialist,8,25.07,Accra Hub,True
+A0066,General Support,9,20.53,Accra Hub,True
+A0067,Payments,19,25.69,Accra Hub,True
+A0068,General Support,30,18.84,Accra Hub,True
+A0069,General Support,32,23.55,Remote,True
+A0070,General Support,3,19.07,Accra Hub,True
+A0071,AV Specialist,25,26.37,Remote,True
+A0072,Payments,49,22.01,Remote,True
+A0073,Payments,34,23.5,Accra Hub,True
+A0074,General Support,50,23.02,Accra Hub,True
+A0075,General Support,39,22.32,Accra Hub,True
+A0076,AV Specialist,11,26.35,Remote,True
+A0077,General Support,17,23.6,Accra Hub,True
+A0078,General Support,13,21.84,Accra Hub,True
+A0079,General Support,47,21.04,Accra Hub,True
+A0080,General Support,24,18.75,Accra Hub,True
+A0081,AV Specialist,37,33.0,Remote,True
+A0082,AV Specialist,72,30.4,Remote,True
+A0083,General Support,9,18.83,Remote,True
+A0084,General Support,64,20.89,Accra Hub,True
+A0085,AV Specialist,43,25.33,Accra Hub,True
+A0086,Safety,34,28.91,Accra Hub,True
+A0087,AV Specialist,48,26.68,Remote,True
+A0088,General Support,59,20.56,Accra Hub,True
+A0089,General Support,48,22.91,Remote,True
+A0090,AV Specialist,1,31.04,Accra Hub,True
+A0091,General Support,66,22.11,Remote,True
+A0092,General Support,9,18.45,Accra Hub,True
+A0093,Safety,35,30.39,Accra Hub,True
+A0094,Payments,53,24.66,Accra Hub,False
+A0095,Payments,59,27.63,Accra Hub,True
+A0096,General Support,65,21.76,Remote,True
+A0097,AV Specialist,46,26.89,Accra Hub,True
+A0098,Payments,9,22.03,Accra Hub,True
+A0099,General Support,27,18.39,Accra Hub,True
+A0100,Payments,57,23.06,Remote,True
+A0101,Safety,60,35.55,Remote,True
+A0102,Safety,5,29.73,Remote,True
+A0103,General Support,28,18.25,Accra Hub,True
+A0104,General Support,26,21.45,Accra Hub,True
+A0105,Payments,63,23.07,Accra Hub,True
+A0106,Payments,56,23.34,Remote,True
+A0107,Safety,49,39.59,Remote,True
+A0108,Payments,35,26.88,Accra Hub,True
+A0109,AV Specialist,6,32.52,Remote,True
+A0110,AV Specialist,54,25.29,Remote,True
+A0111,General Support,47,23.82,Remote,True
+A0112,General Support,21,20.89,Remote,True
+A0113,Payments,25,22.52,Accra Hub,True
+A0114,Payments,49,23.89,Accra Hub,True
+A0115,General Support,3,18.61,Accra Hub,True
+A0116,General Support,57,19.96,Remote,False
+A0117,General Support,43,18.77,Accra Hub,True
+A0118,General Support,15,19.5,Accra Hub,True
+A0119,General Support,39,18.41,Accra Hub,True
+A0120,Payments,14,23.54,Accra Hub,True
