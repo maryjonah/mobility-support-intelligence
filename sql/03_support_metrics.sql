@@ -78,3 +78,105 @@ FROM ticket_escalation;
 
 
 -- 4. Average Resolution Time (starts at 5 in chatgpt)
+-- Remember we have some 'dirty' data where resolved_at < opened_at, so we will exclude these
+
+SELECT
+	issue_type,
+	COUNT(*) AS resolved_tickets,
+	ROUND(
+		AVG(EXTRACT(EPOCH FROM (resolved_at - opened_at)) / 60)
+	, 2) AS avg_resolution_minutes
+FROM support_tickets
+WHERE status = 'resolved'
+AND resolved_at >= opened_at
+GROUP BY issue_type
+ORDER BY avg_resolution_minutes DESC;
+
+
+-- 5. Overall Customer Satisfaction Score (CSAT)
+SELECT
+	COUNT(*) AS valid_survey_responses,
+	COUNT(*) FILTER(WHERE csat_score IN (4, 5)) AS satisfied_responses,
+	ROUND(
+		COUNT(*) FILTER(WHERE csat_score IN (4, 5))::NUMERIC / NULLIF(COUNT(*), 0) * 100
+	, 2) AS csat_pct
+FROM customer_feedback
+WHERE csat_score BETWEEN 1 AND 5;
+
+
+-- 6. CSAT by Issue Type
+SELECT
+	st.issue_type,
+	COUNT(*) AS survey_responses,
+	ROUND(
+		COUNT(*) FILTER(WHERE cf.csat_score IN (4, 5))::NUMERIC / NULLIF(COUNT(*), 0) * 100, 2
+	) AS csat_pct
+FROM customer_feedback as cf
+JOIN support_tickets as st
+ON cf.ticket_id = st.ticket_id
+WHERE cf.csat_score BETWEEN 1 AND 5
+GROUP BY st.issue_type
+ORDER BY csat_pct ASC;
+
+
+-- 7. Support Performance by Ride Type
+WITH escalation_summary AS (
+	SELECT
+		st.ticket_id,
+		MAX(
+			CASE WHEN se.escalation_flag = TRUE THEN 1 ELSE 0 END
+		) AS was_escalated
+	FROM support_tickets as st
+	LEFT JOIN support_events as se
+	ON st.ticket_id = se.ticket_id
+	GROUP BY st.ticket_id
+),
+repeat_summary AS (
+	SELECT
+		parent.ticket_id,
+		MAX(
+			CASE WHEN child.ticket_id IS NOT NULL THEN 1 ELSE 0 END
+		) AS had_repeat_contact
+	FROM support_tickets as parent
+	LEFT JOIN support_tickets as child
+	ON child.parent_ticket_id = parent.ticket_id
+	GROUP BY parent.ticket_id
+),
+ticket_level AS (
+	SELECT
+		st.ticket_id,
+		st.parent_ticket_id,
+		st.issue_type,
+		st.opened_at,
+		st.resolved_at,
+		t.ride_type,
+		t.city,
+		es.was_escalated,
+		rs.had_repeat_contact
+	FROM support_tickets as st
+	JOIN trips as t
+	ON st.trip_id = t.trip_id
+	LEFT JOIN escalation_summary as es
+	ON st.ticket_id = es.ticket_id
+	LEFT JOIN repeat_summary as rs
+	ON st.ticket_id = rs.ticket_id
+)
+SELECT
+	ride_type,
+	COUNT(*) AS support_tickets,
+	ROUND(AVG(was_escalated) * 100 ,2) AS escalation_rate_pct,
+	ROUND(
+		AVG(CASE WHEN parent_ticket_id IS NULL THEN had_repeat_contact END), 2
+	) AS repeat_contact_rate_pct,
+	ROUND(
+		AVG(
+			CASE 
+				WHEN resolved_at >= opened_at
+				THEN EXTRACT(EPOCH FROM (resolved_at - opened_at)) / 60
+			END
+		)
+	, 2
+	) AS avg_resolution_minutes
+FROM ticket_level
+GROUP BY ride_type
+ORDER BY ride_type;
