@@ -218,7 +218,7 @@ ticket_level AS (
 SELECT
 	issue_type,
 	COUNT(*) AS support_tickets,
-	ROUND(AVG(was_escalated), 2) AS escalation_rate_pct,
+	ROUND(AVG(was_escalated) * 100, 2) AS escalation_rate_pct,
 	ROUND(AVG(CASE WHEN parent_ticket_id IS NULL THEN had_repeat_contact END) * 100, 2) AS repeat_contact_rate_pct,
 	ROUND(
 		AVG(
