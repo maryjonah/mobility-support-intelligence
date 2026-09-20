@@ -66,6 +66,7 @@ SELECT
 	st.initial_agent_id,
 	st.opened_at,
 	st.resolved_at,
+	st.priority,
 	t.city,
 	t.ride_type,
 	t.trip_status,
@@ -104,6 +105,8 @@ LEFT JOIN adjustment_summary as adj
 LEFT JOIN customer_feedback as cf
 	ON st.ticket_id = cf.ticket_id;
 
+
+SELECT * FROM analytics.mart_ticket_performance LIMIT 2;
 
 -- 2. Mart 2: Support Performance
 -- Each row contains trip information with aggregated support activity
@@ -162,3 +165,35 @@ SELECT
 	FROM trips as t
 LEFT JOIN ticket_summary as ts
 	ON t.trip_id = ts.trip_id;
+
+
+-- 3. Mart 3: Experiment Performance
+-- Each row contains information about each experiment assigned support ticket
+
+CREATE OR REPLACE VIEW analytics.mart_experience_performance AS
+SELECT
+	ea.assignment_id,
+	ea.ticket_id,
+	ea.experiment_name,
+	mtp.trip_id,
+	mtp.rider_id,
+	mtp.city,
+	mtp.ride_type,
+	mtp.issue_type,
+	mtp.channel,
+	mtp.priority,
+	mtp.was_escalated,
+	mtp.had_repeat_contact,
+	mtp.resolution_minutes,
+	mtp.total_handling_minutes,
+	mtp.agent_labor_cost,
+	mtp.refund_cost,
+	mtp.appeasement_cost,
+	mtp.total_support_cost,
+	mtp.csat_score,
+	mtp.csat_satisfied,
+	mtp.missing_trip_flag,
+	mtp.invalid_resolution_time_flag
+FROM experiment_assignments as ea
+JOIN analytics.mart_ticket_performance as mtp
+	ON ea.ticket_id = mtp.ticket_id;
