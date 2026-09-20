@@ -170,11 +170,13 @@ LEFT JOIN ticket_summary as ts
 -- 3. Mart 3: Experiment Performance
 -- Each row contains information about each experiment assigned support ticket
 
-CREATE OR REPLACE VIEW analytics.mart_experience_performance AS
+CREATE OR REPLACE VIEW analytics.mart_experiment_performance AS
 SELECT
 	ea.assignment_id,
 	ea.ticket_id,
 	ea.experiment_name,
+	ea.experiment_group,
+	ea.assigned_at,
 	mtp.trip_id,
 	mtp.rider_id,
 	mtp.city,
